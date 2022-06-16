@@ -15,6 +15,11 @@ const Outer = styled.div`
   border-radius: 8px;
 `;
 
+const Audio = styled.audio`
+    width: 0;
+    height: 0;
+    position: absolute;
+`;
 
 
 class CustomSlide extends Component {
@@ -27,7 +32,6 @@ class CustomSlide extends Component {
 }
 
 export default class Responsive extends Component {
-
   dummyData = [{
         deadline:"December, 30, 2021",
         authorLink: "#",
@@ -38,7 +42,11 @@ export default class Responsive extends Component {
         title: "Pinky Ocean",
         price: "0.08 ETH",
         bid: "1/20",
-        likes: 50
+        likes: 50,
+        audio: {
+            src: "",
+            id: 1
+        }
     },
     {
         deadline:"",
@@ -198,8 +206,20 @@ export default class Responsive extends Component {
     }]
 
   constructor(props) {
-      super(props);
-      this.state = { deadline: "January, 10, 2022", deadline1: "February, 10, 2022", deadline2: "February, 1, 2022" };
+        super(props);
+        this.state = {
+            deadline: "January, 10, 2022",
+            deadline1: "February, 10, 2022",
+            deadline2: "February, 1, 2022",
+            
+        };
+    }
+
+    playAudio(audioId) {
+        const audio = document.getElementById(audioId);
+        if (audio) {
+
+        }
     }
 
   render() {
@@ -253,6 +273,7 @@ export default class Responsive extends Component {
         }
       ]
     };
+
     return (
         <div className='nft'>
           <Slider {...settings}>
@@ -264,8 +285,19 @@ export default class Responsive extends Component {
                   </div>
                   <div className="author_list_pp">
                       <span onClick={()=> window.open("/home1", "_self")}>                                    
-                          <img className="lazy" src="./img/author/author-1.jpg" alt=""/>
+                            <img
+                                className="lazy"
+                                src="./img/author/author-1.jpg"
+                                alt=""
+                                onClick={() => playAudio("carousel-audio-1")}
+                            />
                           <i className="fa fa-check"></i>
+                          <Audio id="carousel-audio-1" controls >
+                            <source
+                                src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+                                type="audio/mpeg"
+                            />
+                          </Audio>
                       </span>
                   </div>
                   <div className="nft__item_wrap">
