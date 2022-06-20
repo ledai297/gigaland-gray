@@ -11,36 +11,69 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-const Colection= function() {
-const [openMenu, setOpenMenu] = React.useState(true);
-const [openMenu1, setOpenMenu1] = React.useState(false);
-const [openMenu2, setOpenMenu2] = React.useState(false);
-const handleBtnClick = (): void => {
-  setOpenMenu(!openMenu);
-  setOpenMenu1(false);
-  setOpenMenu2(false);
-  document.getElementById("Mainbtn").classList.add("active");
-  document.getElementById("Mainbtn1").classList.remove("active");
-  document.getElementById("Mainbtn2").classList.remove("active");
-};
-const handleBtnClick1 = (): void => {
-  setOpenMenu1(!openMenu1);
-  setOpenMenu2(false);
-  setOpenMenu(false);
-  document.getElementById("Mainbtn1").classList.add("active");
-  document.getElementById("Mainbtn").classList.remove("active");
-  document.getElementById("Mainbtn2").classList.remove("active");
-};
-const handleBtnClick2 = (): void => {
-  setOpenMenu2(!openMenu2);
-  setOpenMenu(false);
-  setOpenMenu1(false);
-  document.getElementById("Mainbtn2").classList.add("active");
-  document.getElementById("Mainbtn").classList.remove("active");
-  document.getElementById("Mainbtn1").classList.remove("active");
-};
+const Colection = function() {
+  const [openMenu, setOpenMenu] = React.useState(true);
+  const [openMenu1, setOpenMenu1] = React.useState(false);
+  const [openMenu2, setOpenMenu2] = React.useState(false);
+  const handleBtnClick = (): void => {
+    setOpenMenu(!openMenu);
+    setOpenMenu1(false);
+    setOpenMenu2(false);
+    document.getElementById("Mainbtn").classList.add("active");
+    document.getElementById("Mainbtn1").classList.remove("active");
+    document.getElementById("Mainbtn2").classList.remove("active");
+  };
+  const handleBtnClick1 = (): void => {
+    setOpenMenu1(!openMenu1);
+    setOpenMenu2(false);
+    setOpenMenu(false);
+    document.getElementById("Mainbtn1").classList.add("active");
+    document.getElementById("Mainbtn").classList.remove("active");
+    document.getElementById("Mainbtn2").classList.remove("active");
+  };
+  const handleBtnClick2 = (): void => {
+    setOpenMenu2(!openMenu2);
+    setOpenMenu(false);
+    setOpenMenu1(false);
+    document.getElementById("Mainbtn2").classList.add("active");
+    document.getElementById("Mainbtn").classList.remove("active");
+    document.getElementById("Mainbtn1").classList.remove("active");
+  };
 
 
+  const authors = [
+    {
+        id: 1,
+        name: "MyApe",
+        twitter: "",
+        walletAddress: "",
+        avatar: "",
+        audios: [
+            {
+                src: "./audio/Rollin.mp3",
+                id: 1,
+                name: "Rollin",
+                price: "",
+                createdAt: ""
+            },
+            {
+                src: "./audio/Rollin.mp3",
+                id: 1,
+                name: "Rollin",
+                price: "",
+                createdAt: ""
+            },
+            {
+                src: "./audio/Rollin.mp3",
+                id: 1,
+                name: "Rollin",
+                price: "",
+                createdAt: ""
+            }
+        ]
+    }
+
+  ]
 
 return (
 <div>

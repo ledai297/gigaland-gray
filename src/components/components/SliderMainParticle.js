@@ -31,13 +31,14 @@ const slidermainparticle= () => (
     <div className="row align-items-center">
           <div className="col-md-6">
               <div className="spacer-single"></div>
-              <h6> <span className="text-uppercase color">Gigaland Market</span></h6>
+              <h6> <span className="text-uppercase color">MusicVerse</span></h6>
               <Reveal className='onStep' keyframes={fadeInUp} delay={300} duration={900} triggerOnce>
-              <h1 className="col-white">Create, sell or collect digital items.</h1>
+              <h1 className="col-white">MUSIC, NFT’S & ENTERTAINMENT IN THE METAVERSE</h1>
               </Reveal>
               <Reveal className='onStep' keyframes={fadeInUp} delay={600} duration={900} triggerOnce>
               <p className="lead col-white">
-              Unit of data stored on a digital ledger, called a blockchain, that certifies a digital asset to be unique and therefore not interchangeable
+                  <h3>Be discovered, connect with fans, make money</h3>
+                  <div>The MusicVerse is a platform for creators. A global music marketplace that allows individuals around the world to upload their newest music as NFTs. A place where they can be seen and discovered</div>
               </p>
               </Reveal>
               <div className="spacer-10"></div>

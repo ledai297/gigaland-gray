@@ -33,177 +33,114 @@ class CustomSlide extends Component {
 
 export default class Responsive extends Component {
   dummyData = [{
+        id: 1,
         deadline:"December, 30, 2021",
         authorLink: "#",
         nftLink: "#",
         bidLink: "#",
-        authorImg: "./img/author/author-1.jpg",
-        previewImg: "./img/items/static-1.jpg",
-        title: "Pinky Ocean",
+        authorImg: "./img/author/ape-drops.png",
+        previewImg: "./img/collections/Rollin.png",
+        title: "Rollin",
         price: "0.08 ETH",
         bid: "1/20",
         likes: 50,
         audio: {
-            src: "",
-            id: 1
+            src: "./audio/Rollin.mp3",
+            id: 1,
+            name: "Rollin"
         }
     },
     {
-        deadline:"",
+        id: 2,
+        deadline:"December, 30, 2021",
         authorLink: "#",
         nftLink: "#",
         bidLink: "#",
-        authorImg: "./img/author/author-10.jpg",
-        previewImg: "./img/items/static-2.jpg",
-        title: "Deep Sea Phantasy",
-        price: "0.06 ETH",
-        bid: "1/22",
-        likes: 80
-    },
-    {
-        deadline:"",
-        authorLink: "#",
-        nftLink: "#",
-        bidLink: "#",
-        authorImg: "./img/author/author-11.jpg",
-        previewImg: "./img/items/static-3.jpg",
-        title: "Rainbow Style",
-        price: "0.05 ETH",
-        bid: "1/11",
-        likes: 97
-    },
-    {
-        deadline:"January, 1, 2022",
-        authorLink: "#",
-        nftLink: "#",
-        bidLink: "#",
-        authorImg: "./img/author/author-12.jpg",
-        previewImg: "./img/items/static-4.jpg",
-        title: "Two Tigers",
+        authorImg: "./img/author/CryptoRaiders.png",
+        previewImg: "./img/collections/CryptoRaiserBackground.png",
+        title: "Rollin",
         price: "0.08 ETH",
         bid: "1/20",
-        likes: 50
+        likes: 50,
+        audio: {
+            src: "./audio/cryptoRaiders/LastCallAtTheDrunkenFairy.mp3",
+            id: 2,
+            name: "Last call at the drunken fairy"
+        }
     },
     {
-        deadline:"",
+        id: 3,
+        deadline:"December, 30, 2021",
         authorLink: "#",
         nftLink: "#",
         bidLink: "#",
-        authorImg: "./img/author/author-9.jpg",
-        previewImg: "./img/items/anim-4.webp",
-        title: "The Truth",
+        authorImg: "./img/author/asyncMusic.png",
+        previewImg: "./img/collections/asyncMusic/AsyncMusic1.jpg",
+        title: "Rollin",
         price: "0.08 ETH",
         bid: "1/20",
-        likes: 50
+        likes: 50,
+        audio: {
+            src: "./audio/asyncMusic/AsyncMusic1.mp3",
+            id: 3,
+            name: "The Song of Nine Paths Gold Edition"
+        },
     },
     {
-        deadline:"January, 15, 2022",
+        id: 4,
+        deadline:"December, 30, 2021",
         authorLink: "#",
         nftLink: "#",
         bidLink: "#",
-        authorImg: "./img/author/author-2.jpg",
-        previewImg: "./img/items/anim-2.webp",
-        title: "Running Puppets",
+        authorImg: "./img/author/ApeVsPunk.jpg",
+        previewImg: "./img/collections/apeVsPunk/WhoCare.png",
+        title: "Oshi",
         price: "0.08 ETH",
         bid: "1/20",
-        likes: 50
+        likes: 50,
+        audio: {
+            src: "./audio/apeVsPunk/WhoCare.mp3",
+            id: 4,
+            name: "Ape vs Punk. Who care?"
+        },
     },
     {
-        deadline:"",
+        id: 5,
+        deadline:"December, 30, 2021",
         authorLink: "#",
         nftLink: "#",
         bidLink: "#",
-        authorImg: "./img/author/author-3.jpg",
-        previewImg: "./img/items/anim-1.webp",
-        title: "USA Wordmation",
+        authorImg: "./img/author/MyCryptoPunk.gif",
+        previewImg: "./img/collections/cryptoPunk/MyCryptoPunk.jpg",
+        title: "Oshi",
         price: "0.08 ETH",
         bid: "1/20",
-        likes: 50
+        likes: 50,
+        audio: {
+            src: "./audio/cryptoPunk/MyCryptoPunk.mp3",
+            id: 5,
+            name: "Crypto punk?"
+        },
     },
     {
-        deadline:"",
+        id: 6,
+        deadline:"December, 30, 2021",
         authorLink: "#",
         nftLink: "#",
         bidLink: "#",
-        authorImg: "./img/author/author-4.jpg",
-        previewImg: "./img/items/anim-5.webp",
-        title: "Loop Donut",
+        authorImg: "./img/author/MonteBooker.png",
+        previewImg: "./img/collections/monteBooker/kolors.png",
+        title: "Oshi",
         price: "0.08 ETH",
         bid: "1/20",
-        likes: 50
-    },
-    {
-        deadline:"January, 3, 2022",
-        authorLink: "#",
-        nftLink: "#",
-        bidLink: "#",
-        authorImg: "./img/author/author-5.jpg",
-        previewImg: "./img/items/anim-3.webp",
-        title: "Lady Copter",
-        price: "0.08 ETH",
-        bid: "1/20",
-        likes: 50
-    },
-    {
-        deadline:"",
-        authorLink: "#",
-        nftLink: "#",
-        bidLink: "#",
-        authorImg: "./img/author/author-7.jpg",
-        previewImg: "./img/items/static-5.jpg",
-        title: "Purple Planet",
-        price: "0.08 ETH",
-        bid: "1/20",
-        likes: 50
-    },
-    {
-        deadline:"",
-        authorLink: "#",
-        nftLink: "#",
-        bidLink: "#",
-        authorImg: "./img/author/author-6.jpg",
-        previewImg: "./img/items/anim-6.webp",
-        title: "Oh Yeah!",
-        price: "0.08 ETH",
-        bid: "1/20",
-        likes: 50
-    },
-    {
-        deadline:"January, 10, 2022",
-        authorLink: "#",
-        nftLink: "#",
-        bidLink: "#",
-        authorImg: "./img/author/author-8.jpg",
-        previewImg: "./img/items/anim-7.webp",
-        title: "This is Our Story",
-        price: "0.08 ETH",
-        bid: "1/20",
-        likes: 50
-    },
-    {
-        deadline:"",
-        authorLink: "#",
-        nftLink: "#",
-        bidLink: "#",
-        authorImg: "./img/author/author-9.jpg",
-        previewImg: "./img/items/static-6.jpg",
-        title: "Pixel World",
-        price: "0.08 ETH",
-        bid: "1/20",
-        likes: 50
-    },
-    {
-        deadline:"January, 10, 2022",
-        authorLink: "#",
-        nftLink: "#",
-        bidLink: "#",
-        authorImg: "./img/author/author-12.jpg",
-        previewImg: "./img/items/anim-8.webp",
-        title: "I Believe I Can Fly",
-        price: "0.08 ETH",
-        bid: "1/20",
-        likes: 50
-    }]
+        likes: 50,
+        audio: {
+            src: "./audio/monteBooker/MonteBooker.wav",
+            id: 6,
+            name: "Kolors"
+        },
+    }
+]
 
   constructor(props) {
         super(props);
@@ -211,14 +148,28 @@ export default class Responsive extends Component {
             deadline: "January, 10, 2022",
             deadline1: "February, 10, 2022",
             deadline2: "February, 1, 2022",
-            
+            audioPlayingId: ""
         };
+        this.playAudio = this.playAudio.bind(this);
     }
 
     playAudio(audioId) {
-        const audio = document.getElementById(audioId);
-        if (audio) {
+        const audio = document.getElementById(`new-items-${audioId}`);
+        const { audioPlayingId } = this.state;
 
+        if (audioPlayingId) {
+            if (audioId === audioPlayingId) {
+                audio.pause();
+                this.setState({ ...this.state, audioPlayingId: "" });
+            } else {
+                const currentAudio = document.getElementById(`new-items-${audioPlayingId}`);
+                currentAudio.pause();
+                audio.play();
+                this.setState({ ...this.state, audioPlayingId: audioId });
+            }
+        } else {
+            audio.play();
+            this.setState({ ...this.state, audioPlayingId: audioId });
         }
     }
 
@@ -277,229 +228,56 @@ export default class Responsive extends Component {
     return (
         <div className='nft'>
           <Slider {...settings}>
-            <CustomSlide className='itm' index={1}>
-            <div className="d-item">
-              <div className="nft__item">
-                  <div className="de_countdown">
-                  <Clock deadline={this.state.deadline} />
-                  </div>
-                  <div className="author_list_pp">
-                      <span onClick={()=> window.open("/home1", "_self")}>                                    
-                            <img
-                                className="lazy"
-                                src="./img/author/author-1.jpg"
-                                alt=""
-                                onClick={() => playAudio("carousel-audio-1")}
-                            />
-                          <i className="fa fa-check"></i>
-                          <Audio id="carousel-audio-1" controls >
-                            <source
-                                src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-                                type="audio/mpeg"
-                            />
-                          </Audio>
-                      </span>
-                  </div>
-                  <div className="nft__item_wrap">
-                    <Outer>
-                      <span>
-                          <img src="./img/items/static-1.jpg" className="lazy nft__item_preview" alt=""/>
-                      </span>
-                    </Outer>
-                  </div>
-                  <div className="nft__item_info">
-                      <span onClick={()=> window.open("/#", "_self")}>
-                          <h4>Pinky Ocean</h4>
-                      </span>
-                      <div className="nft__item_price">
-                          0.08 ETH<span>1/20</span>
-                      </div>
-                      <div className="nft__item_action">
-                          <span onClick={()=> window.open("/#", "_self")}>Place a bid</span>
-                      </div>
-                      <div className="nft__item_like">
-                          <i className="fa fa-heart"></i><span>50</span>
-                      </div>                            
-                  </div> 
-              </div>
-            </div>
-            </CustomSlide>
-
-            <CustomSlide className='itm' index={2}>
-              <div className="d-item">
-                <div className="nft__item">
-                    <div className="author_list_pp">
-                        <span onClick={()=> window.open("/#", "_self")}>                                    
-                            <img className="lazy" src="./img/author/author-10.jpg" alt=""/>
-                            <i className="fa fa-check"></i>
-                        </span>
-                    </div>
-                    <div className="nft__item_wrap">
-                      <Outer>
-                        <span>
-                            <img src="./img/items/static-2.jpg" className="lazy nft__item_preview" alt=""/>
-                        </span>
-                      </Outer>
-                    </div>
-                    <div className="nft__item_info">
-                        <span onClick={()=> window.open("/#", "_self")}>
-                            <h4>Deep Sea Phantasy</h4>
-                        </span>
-                        <div className="nft__item_price">
-                            0.06 ETH<span>1/22</span>
+            {
+                this.dummyData?.map((item) => (
+                    <CustomSlide className='itm' index={3}>
+                        <div className="d-item">
+                            <div className="nft__item">
+                                <div className="de_countdown">
+                                <Clock deadline={this.state.deadline1} />
+                                </div>
+                                <div className="author_list_pp">
+                                    <span onClick={()=> window.open("/#", "_self")}>                                    
+                                        <img className="lazy" src={item?.authorImg} alt=""/>
+                                        <i className="fa fa-check"></i>
+                                    </span>
+                                </div>
+                                <div className="nft__item_wrap">
+                                <Outer>
+                                    <div className="g-relative">
+                                        <img src={item?.previewImg} className="lazy nft__item_preview" alt="" />
+                                        <span className="icon-play" onClick={() => this.playAudio(item.audio?.id)}>
+                                            <span aria-hidden="true" className={item?.audio?.id === this.state.audioPlayingId ? 'icon_pause' : 'arrow_triangle-right'}></span>
+                                        </span>
+                                        <Audio id={`new-items-${item?.id}`} controls >
+                                            <source
+                                                src={item?.audio?.src || ""}
+                                                type="audio/mpeg"
+                                            />
+                                        </Audio>
+                                        
+                                    </div>
+                                </Outer>
+                                </div>
+                                <div className="nft__item_info">
+                                    <span onClick={()=> window.open("/#", "_self")}>
+                                        <h4>{item?.audio?.name}</h4>
+                                    </span>
+                                    <div className="nft__item_price">
+                                        {item?.price}<span>{item?.bid}</span>
+                                    </div>
+                                    <div className="nft__item_action">
+                                        <span onClick={()=> window.open("/#", "_self")}>Place a bid</span>
+                                    </div>
+                                    <div className="nft__item_like">
+                                        <i className="fa fa-heart"></i><span>97</span>
+                                    </div>                                 
+                                </div> 
+                            </div>
                         </div>
-                        <div className="nft__item_action">
-                            <span onClick={()=> window.open("/#", "_self")}>Place a bid</span>
-                        </div>
-                        <div className="nft__item_like">
-                            <i className="fa fa-heart"></i><span>80</span>
-                        </div>                                 
-                    </div> 
-                </div>
-            </div>
-            </CustomSlide>
-
-            <CustomSlide className='itm' index={3}>
-              <div className="d-item">
-                <div className="nft__item">
-                    <div className="de_countdown">
-                    <Clock deadline={this.state.deadline1} />
-                    </div>
-                    <div className="author_list_pp">
-                        <span onClick={()=> window.open("/#", "_self")}>                                    
-                            <img className="lazy" src="./img/author/author-11.jpg" alt=""/>
-                            <i className="fa fa-check"></i>
-                        </span>
-                    </div>
-                    <div className="nft__item_wrap">
-                      <Outer>
-                        <span>
-                            <img src="./img//items/static-3.jpg" className="lazy nft__item_preview" alt=""/>
-                        </span>
-                      </Outer>
-                    </div>
-                    <div className="nft__item_info">
-                        <span onClick={()=> window.open("/#", "_self")}>
-                            <h4>Rainbow Style</h4>
-                        </span>
-                        <div className="nft__item_price">
-                            0.05 ETH<span>1/11</span>
-                        </div>
-                        <div className="nft__item_action">
-                            <span onClick={()=> window.open("/#", "_self")}>Place a bid</span>
-                        </div>
-                        <div className="nft__item_like">
-                            <i className="fa fa-heart"></i><span>97</span>
-                        </div>                                 
-                    </div> 
-                </div>
-            </div>
-            </CustomSlide>
-
-            <CustomSlide className='itm' index={4}>
-            <div className="d-item">
-                <div className="nft__item">
-                    <div className="author_list_pp">
-                        <span onClick={()=> window.open("/#", "_self")}>                                    
-                            <img className="lazy" src="./img/author/author-12.jpg" alt=""/>
-                            <i className="fa fa-check"></i>
-                        </span>
-                    </div>
-                    <div className="nft__item_wrap">
-                      <Outer>
-                        <span>
-                            <img src="./img/items/static-4.jpg" className="lazy nft__item_preview" alt=""/>
-                        </span>
-                      </Outer>
-                    </div>
-                    <div className="nft__item_info">
-                        <span onClick={()=> window.open("/#", "_self")}>
-                            <h4>Two Tigers</h4>
-                        </span>
-                        <div className="nft__item_price">
-                            0.02 ETH<span>1/15</span>
-                        </div>
-                        <div className="nft__item_action">
-                            <span onClick={()=> window.open("/#", "_self")}>Place a bid</span>
-                        </div>
-                        <div className="nft__item_like">
-                            <i className="fa fa-heart"></i><span>73</span>
-                        </div>                                 
-                    </div> 
-                </div>
-            </div>
-            </CustomSlide>
-
-            <CustomSlide className='itm' index={5}>
-            <div className="d-item">
-                <div className="nft__item">
-                    <div className="author_list_pp">
-                        <span onClick={()=> window.open("/#", "_self")}>                                    
-                            <img className="lazy" src="./img/author/author-9.jpg" alt=""/>
-                            <i className="fa fa-check"></i>
-                        </span>
-                    </div>
-                    <div className="nft__item_wrap">
-                      <Outer>
-                        <span>
-                            <img src="./img/items/anim-4.webp" className="lazy nft__item_preview" alt=""/>
-                        </span>
-                      </Outer>
-                    </div>
-                    <div className="nft__item_info">
-                        <span onClick={()=> window.open("/#", "_self")}>
-                            <h4>The Truth</h4>
-                        </span>
-                        <div className="nft__item_price">
-                            0.06 ETH<span>1/20</span>
-                        </div>
-                        <div className="nft__item_action">
-                            <span onClick={()=> window.open("/#", "_self")}>Place a bid</span>
-                        </div>
-                        <div className="nft__item_like">
-                            <i className="fa fa-heart"></i><span>26</span>
-                        </div>                                 
-                    </div>
-                </div>
-            </div>
-            </CustomSlide>
-
-            <CustomSlide className='itm' index={6}>
-            <div className="d-item">
-                <div className="nft__item">
-                    <div className="de_countdown">
-                      <Clock deadline={this.state.deadline2} />
-                    </div>
-                    <div className="author_list_pp">
-                        <span onClick={()=> window.open("/#", "_self")}>                                    
-                            <img className="lazy" src="./img/author/author-2.jpg" alt=""/>
-                            <i className="fa fa-check"></i>
-                        </span>
-                    </div>
-                    <div className="nft__item_wrap">
-                      <Outer>
-                        <span>
-                            <img src="./img/items/anim-2.webp" className="lazy nft__item_preview" alt=""/>
-                        </span>
-                      </Outer>
-                    </div>
-                    <div className="nft__item_info">
-                        <span onClick={()=> window.open("/#", "_self")}>
-                            <h4>Running Puppets</h4>
-                        </span>
-                        <div className="nft__item_price">
-                            0.03 ETH<span>1/24</span>
-                        </div>    
-                        <div className="nft__item_action">
-                            <span onClick={()=> window.open("/#", "_self")}>Place a bid</span>
-                        </div>
-                        <div className="nft__item_like">
-                            <i className="fa fa-heart"></i><span>45</span>
-                        </div>                                  
-                    </div> 
-                </div>
-            </div>
-            </CustomSlide>
+                        </CustomSlide>
+                ))
+            }
 
           </Slider>
         </div>

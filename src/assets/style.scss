@@ -2873,10 +2873,10 @@ i.font60 {
     margin-bottom: 20px;
     justify-content: center;
 }
-.nft__item_wrap span {
-    display: block;
-    width: 100%;
-}
+// .nft__item_wrap span {
+//     display: block;
+//     width: 100%;
+// }
 .nft__item img {
     width: 100%;
     height: auto !important;
@@ -4074,3 +4074,24 @@ img.img-rounded{
 @media only screen and (max-width: 378px) {
 
 }
+
+.g-relative {
+  position: relative;
+}
+
+.icon-play {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
