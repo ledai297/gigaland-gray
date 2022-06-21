@@ -4,6 +4,7 @@ import ColumnZeroTwo from '../components/ColumnZeroTwo';
 import ColumnZeroThree from '../components/ColumnZeroThree';
 import Footer from '../components/footer';
 import { createGlobalStyle } from 'styled-components';
+import { useLocation } from "@reach/router";
 
 const GlobalStyles = createGlobalStyle`
   header#myHeader.navbar.white {
@@ -15,6 +16,8 @@ const Colection = function() {
   const [openMenu, setOpenMenu] = React.useState(true);
   const [openMenu1, setOpenMenu1] = React.useState(false);
   const [openMenu2, setOpenMenu2] = React.useState(false);
+  const location = useLocation();
+
   const handleBtnClick = (): void => {
     setOpenMenu(!openMenu);
     setOpenMenu1(false);
@@ -44,7 +47,7 @@ const Colection = function() {
   const authors = [
     {
         id: 1,
-        name: "MyApe",
+        name: "ApeDrops",
         twitter: "",
         walletAddress: "",
         avatar: "",
@@ -86,7 +89,7 @@ return (
          <div className="d_profile de-flex">
               <div className="de-flex-col">
                   <div className="profile_avatar">
-                      <img src="./img/author_single/author_thumbnail.jpg" alt=""/>
+                      <img src="./img/author/ape-drops.png" alt=""/>
                       <i className="fa fa-check"></i>
                       <div className="profile_name">
                           <h4>

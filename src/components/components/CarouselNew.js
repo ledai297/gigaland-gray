@@ -139,6 +139,78 @@ export default class Responsive extends Component {
             id: 6,
             name: "Kolors"
         },
+    },
+    {
+      id: 7,
+      deadline:"December, 30, 2021",
+      authorLink: "#",
+      nftLink: "#",
+      bidLink: "#",
+      authorImg: "./img/author/aluna.jpg",
+      previewImg: "./img/collections/alunaMusic/background.jpg",
+      title: "Oshi",
+      price: "0.08 ETH",
+      bid: "1/20",
+      likes: 50,
+      audio: {
+          src: "./audio/alunaMusic/ForgetAboutMe.wav",
+          id: 7,
+          name: "Forget about me"
+      },
+    },
+    {
+      id: 8,
+      deadline:"December, 30, 2021",
+      authorLink: "#",
+      nftLink: "#",
+      bidLink: "#",
+      authorImg: "./img/author/djMike.jpg",
+      previewImg: "./img/collections/djMike/T800.png",
+      title: "Oshi",
+      price: "0.08 ETH",
+      bid: "1/20",
+      likes: 50,
+      audio: {
+          src: "./audio/djMike/caT8000.mp3",
+          id: 8,
+          name: "#004 caT8000"
+      },
+    },
+    {
+      id: 9,
+      deadline:"December, 30, 2021",
+      authorLink: "#",
+      nftLink: "#",
+      bidLink: "#",
+      authorImg: "./img/author/djMike.jpg",
+      previewImg: "./img/collections/djMike/Christofffrrr.png",
+      title: "Oshi",
+      price: "0.08 ETH",
+      bid: "1/20",
+      likes: 50,
+      audio: {
+          src: "./audio/djMike/Christofffrrr.mp3",
+          id: 9,
+          name: "Christofffrrr"
+      },
+    },
+    {
+      id: 10,
+      deadline:"December, 30, 2021",
+      authorLink: "#",
+      nftLink: "#",
+      bidLink: "#",
+      authorImg: "./img/author/zah23.jpg",
+      previewImg: "./img/collections/zah23/zah23.PNG",
+      title: "Oshi",
+      price: "0.08 ETH",
+      bid: "1/20",
+      likes: 50,
+      audio: {
+          src: "./audio/zah23/MenteOscura.mp3",
+          id: 10,
+          name: "Mente Oscura"
+      },
     }
 ]
 
@@ -225,6 +297,8 @@ export default class Responsive extends Component {
       ]
     };
 
+    console.log('props: ', this)
+
     return (
         <div className='nft'>
           <Slider {...settings}>
@@ -237,7 +311,7 @@ export default class Responsive extends Component {
                                 <Clock deadline={this.state.deadline1} />
                                 </div>
                                 <div className="author_list_pp">
-                                    <span onClick={()=> window.open("/#", "_self")}>                                    
+                                    <span>                                    
                                         <img className="lazy" src={item?.authorImg} alt=""/>
                                         <i className="fa fa-check"></i>
                                     </span>
