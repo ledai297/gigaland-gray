@@ -4,6 +4,7 @@ import styled from "styled-components";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Clock from "./Clock";
+import { navigate } from "@reach/router";
 
 const Outer = styled.div`
   display: flex;
@@ -32,22 +33,23 @@ class CustomSlide extends Component {
 }
 
 export default class Responsive extends Component {
-  dummyData = [{
+  dummyData = [
+    {
         id: 1,
         deadline:"December, 30, 2021",
         authorLink: "#",
         nftLink: "#",
         bidLink: "#",
-        authorImg: "./img/author/ape-drops.png",
-        previewImg: "./img/collections/Rollin.png",
+        authorImg: "./img/author/apeDrops.png",
+        previewImg: "./img/collections/apeDrops/FoolinYaself.png",
         title: "Rollin",
         price: "0.08 ETH",
         bid: "1/20",
         likes: 50,
         audio: {
-            src: "./audio/Rollin.mp3",
+            src: "./audio/FoolinYaself.mp3",
             id: 1,
-            name: "Rollin"
+            name: "Foolin Yaself"
         }
     },
     {
@@ -223,6 +225,7 @@ export default class Responsive extends Component {
             audioPlayingId: ""
         };
         this.playAudio = this.playAudio.bind(this);
+        this.goToAuthorCollections = this.goToAuthorCollections.bind(this);
     }
 
     playAudio(audioId) {
@@ -243,6 +246,10 @@ export default class Responsive extends Component {
             audio.play();
             this.setState({ ...this.state, audioPlayingId: audioId });
         }
+    }
+    
+    goToAuthorCollections(authorId) {
+        navigate(`/Author/${authorId}`);
     }
 
   render() {
@@ -297,8 +304,6 @@ export default class Responsive extends Component {
       ]
     };
 
-    console.log('props: ', this)
-
     return (
         <div className='nft'>
           <Slider {...settings}>
@@ -311,7 +316,7 @@ export default class Responsive extends Component {
                                 <Clock deadline={this.state.deadline1} />
                                 </div>
                                 <div className="author_list_pp">
-                                    <span>                                    
+                                    <span onClick={() => this.goToAuthorCollections(item.id)}>                                    
                                         <img className="lazy" src={item?.authorImg} alt=""/>
                                         <i className="fa fa-check"></i>
                                     </span>

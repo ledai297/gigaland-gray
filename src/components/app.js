@@ -75,7 +75,7 @@ const app= () => (
         <Rangking path="/rangking" />
         <Colection path="/colection" />
         <ItemDetail path="/ItemDetail" />
-        <Author path="/Author" />
+        <Author path="/Author/:id" />
         <Wallet path="/wallet" />
         <Login path="/login" />
         <LoginTwo path="/loginTwo" />
