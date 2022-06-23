@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Clock from "./Clock";
 import { navigate } from "@reach/router";
+import { Collections, DummyAuthors, FEATURES } from "../../data/Collections";
 
 const Outer = styled.div`
   display: flex;
@@ -222,10 +223,23 @@ export default class Responsive extends Component {
             deadline: "January, 10, 2022",
             deadline1: "February, 10, 2022",
             deadline2: "February, 1, 2022",
-            audioPlayingId: ""
+            audioPlayingId: "",
+            nftItems: []
         };
         this.playAudio = this.playAudio.bind(this);
+        this.playMedia = this.playMedia.bind(this);
         this.goToAuthorCollections = this.goToAuthorCollections.bind(this);
+    }
+
+    componentDidMount() {
+      const items = Collections.filter((item) => item?.features.includes(FEATURES.NEW));
+      const authorIds = items.map((item) => item?.authorId);
+      const authorMap = new Map();
+      DummyAuthors.filter((item) => authorIds?.includes(item?.id)).forEach(item => {
+        authorMap.set(item.id, item);
+      });
+      const nftItems = items?.map(item => ({ ...item, author: authorMap.get(item?.authorId) }));
+      this.setState({ ...this.state, nftItems });
     }
 
     playAudio(audioId) {
@@ -250,6 +264,23 @@ export default class Responsive extends Component {
     
     goToAuthorCollections(authorId) {
         navigate(`/Author/${authorId}`);
+    }
+
+    playMedia(data) {
+      const media = document.getElementById(`new-items-${data?.id}`);;
+      if (data?.videoSrc) {
+        if (data?.id === this.state.audioPlayingId) {
+          media.pause();
+          this.setState({ ...this.state, audioPlayingId: "" });
+        } else {
+          const currentVideo = document.getElementById(`new-items-${data?.id}`);
+          currentVideo.pause();
+          media.play();
+          this.setState({ ...this.state, audioPlayingId: data?.id });
+        }
+      } else {
+        this.playAudio(data?.id)
+      }
     }
 
   render() {
@@ -308,7 +339,7 @@ export default class Responsive extends Component {
         <div className='nft'>
           <Slider {...settings}>
             {
-                this.dummyData?.map((item) => (
+                this.state.nftItems?.map((item) => (
                     <CustomSlide className='itm' index={3}>
                         <div className="d-item">
                             <div className="nft__item">
@@ -317,30 +348,45 @@ export default class Responsive extends Component {
                                 </div>
                                 <div className="author_list_pp">
                                     <span onClick={() => this.goToAuthorCollections(item.id)}>                                    
-                                        <img className="lazy" src={item?.authorImg} alt=""/>
+                                        <img className="lazy" src={item?.author?.avatar} alt=""/>
                                         <i className="fa fa-check"></i>
                                     </span>
                                 </div>
                                 <div className="nft__item_wrap">
                                 <Outer>
-                                    <div className="g-relative">
-                                        <img src={item?.previewImg} className="lazy nft__item_preview" alt="" />
-                                        <span className="icon-play" onClick={() => this.playAudio(item.audio?.id)}>
-                                            <span aria-hidden="true" className={item?.audio?.id === this.state.audioPlayingId ? 'icon_pause' : 'arrow_triangle-right'}></span>
-                                        </span>
-                                        <Audio id={`new-items-${item?.id}`} controls >
-                                            <source
-                                                src={item?.audio?.src || ""}
-                                                type="audio/mpeg"
-                                            />
-                                        </Audio>
-                                        
-                                    </div>
-                                </Outer>
+                                  <div className="g-relative">
+                                      {item?.videoSrc ? null : <img src={item?.background} className="lazy nft__item_preview" alt="" />}
+                                      <span
+                                          className="icon-play"
+                                          style={{ zIndex: 9  }}
+                                          onClick={() => this.playMedia(item)}
+                                        >
+                                          <span aria-hidden="true" className={item?.id === this.state.audioPlayingId ? 'icon_pause' : 'arrow_triangle-right'}></span>
+                                      </span>
+                                      {
+                                        item?.videoSrc
+                                          ? (<video id={`new-items-${item?.id}`}  controlslist="nodownload" style={{ height: '260px' }}>
+                                              <source
+                                                  src={item?.videoSrc || ""}
+                                                  type="video/mp4"
+                                              />
+                                            </video>)
+                                          : (
+                                            <Audio id={`new-items-${item?.id}`} controls >
+                                              <source
+                                                  src={item?.src || ""}
+                                                  type="audio/mpeg"
+                                              />
+                                          </Audio>
+                                          )
+                                      }
+                                      
+                                  </div>
+                              </Outer>
                                 </div>
                                 <div className="nft__item_info">
                                     <span onClick={()=> window.open("/#", "_self")}>
-                                        <h4>{item?.audio?.name}</h4>
+                                        <h4>{item?.name}</h4>
                                     </span>
                                     <div className="nft__item_price">
                                         {item?.price}<span>{item?.bid}</span>
