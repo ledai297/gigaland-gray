@@ -347,7 +347,7 @@ export default class Responsive extends Component {
                                 <Clock deadline={this.state.deadline1} />
                                 </div>
                                 <div className="author_list_pp">
-                                    <span onClick={() => this.goToAuthorCollections(item.id)}>                                    
+                                    <span onClick={() => this.goToAuthorCollections(item.authorId)}>                                    
                                         <img className="lazy" src={item?.author?.avatar} alt=""/>
                                         <i className="fa fa-check"></i>
                                     </span>

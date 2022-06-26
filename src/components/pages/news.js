@@ -10,9 +10,9 @@ const GlobalStyles = createGlobalStyle`
 
 const news= () => (
 <div>
-<GlobalStyles/>
+{/* <GlobalStyles/> */}
 
-  <section className='jumbotron breadcumb no-bg'>
+  {/* <section className='jumbotron breadcumb no-bg'>
     <div className='mainbreadcumb'>
       <div className='container'>
         <div className='row m-10-hor'>
@@ -23,7 +23,7 @@ const news= () => (
         </div>
       </div>
     </div>
-  </section>
+  </section> */}
 
   <section className='container'>
     <div className="row">
@@ -131,7 +131,7 @@ const news= () => (
 
         <div className="spacer-single"></div>
                 
-        <ul className="pagination">
+        {/* <ul className="pagination">
             <li><span className='a'>Prev</span></li>
             <li className="active"><span className='a'>1</span></li>
             <li><span className='a'>2</span></li>
@@ -139,12 +139,12 @@ const news= () => (
             <li><span className='a'>4</span></li>
             <li><span className='a'>5</span></li>
             <li><span className='a'>Next</span></li>
-        </ul>
+        </ul> */}
         
     </div>
   </section>
 
-  <Footer />
+  {/* <Footer /> */}
 </div>
 
 );

@@ -4,6 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 import { useParams } from "@reach/router";
 import Clock from "../components/Clock";
 import styled from "styled-components";
+import { Collections, DummyAuthors } from "../../data/Collections";
 
 const GlobalStyles = createGlobalStyle`
   header#myHeader.navbar.white {
@@ -37,7 +38,9 @@ const Colection = function() {
   useEffect(() => {
     const { id } = params;
     // const id = 2;
-    const author = authors.find((item) => item.id === Number(id));
+    const author = DummyAuthors.find((item) => item.id === Number(id));
+    const authorCollection = Collections.filter(item => item.authorId === Number(id));
+    author.collection = authorCollection;
     setAuthor(author);
   }, []);
 
@@ -67,165 +70,6 @@ const Colection = function() {
   };
 
 
-  const authors = [
-    {
-        id: 1,
-        name: "ApeDrops",
-        twitter: "@apedrops",
-        twitterLink: "",
-        walletAddress: "",
-        avatar: "",
-        numberFollowers: 267,
-        audios: [
-            {
-                src: "./audio/Rollin.mp3",
-                id: 1,
-                name: "Rollin",
-                price: "",
-                background: "",
-                createdAt: ""
-            },
-            {
-                src: "./audio/Rollin.mp3",
-                id: 1,
-                name: "Rollin",
-                price: "",
-                background: "",
-                createdAt: ""
-            },
-            {
-                src: "./audio/Rollin.mp3",
-                id: 1,
-                name: "Rollin",
-                price: "",
-                background: "",
-                createdAt: ""
-            }
-        ]
-    },
-    {
-        id: 2,
-        name: "Crypto Raiders",
-        twitter: "@cryptoraiders",
-        twitterLink: "",
-        walletAddress: "",
-        avatar: "/img/author/CryptoRaiders.png",
-        numberFollowers: 268,
-        audios: [
-            {
-                src: "/audio/cryptoRaiders/LastCallAtTheDrunkenFairy.mp3",
-                id: 1,
-                name: "Last call at the drunken fairy",
-                price: "",
-                background: "/img/collections/cryptoRaiders/CryptoRaiders.png",
-                createdAt: "",
-                likes: 12,
-                bid: "",
-                deadline:"December, 30, 2021",
-            },
-            {
-                src: "/audio/cryptoRaiders/BladeInTherDrak.mp3",
-                id: 2,
-                name: "Blade in the Dark",
-                price: "",
-                background: "/img/collections/cryptoRaiders/CryptoRaiders.png",
-                createdAt: "",
-                likes: 12,
-                bid: "1/12",
-                deadline:"December, 30, 2021",
-            },
-            {
-                src: "/audio/cryptoRaiders/CryptOfDreams.wav",
-                id: 3,
-                name: "Crypto of dreams",
-                price: "",
-                background: "/img/collections/cryptoRaiders/CryptoRaiders.png",
-                createdAt: "",
-                likes: 12,
-                bid: "",
-                deadline:"December, 30, 2021",
-            },
-            {
-                src: "/audio/cryptoRaiders/Incomming.mp3",
-                id: 3,
-                name: "Incomming",
-                price: "",
-                background: "/img/collections/cryptoRaiders/CryptoRaiders.png",
-                createdAt: "",
-                likes: 12,
-                bid: "",
-                deadline:"December, 30, 2021",
-            },
-            {
-                src: "/audio/cryptoRaiders/LostTheForest.mp3",
-                id: 3,
-                name: "Lost the forest",
-                price: "",
-                background: "/img/collections/cryptoRaiders/CryptoRaiders.png",
-                createdAt: "",
-                likes: 19,
-                bid: "",
-                deadline:"December, 30, 2021",
-            },
-            {
-                src: "/audio/cryptoRaiders/WeAreRaiders.wav",
-                id: 3,
-                name: "We are raiders",
-                price: "",
-                background: "/img/collections/cryptoRaiders/CryptoRaiders.png",
-                createdAt: "",
-                likes: 32,
-                bid: "",
-                deadline:"December, 30, 2021",
-            }
-        ]
-    },
-    {
-        id: 3,
-        name: "Ape Drops",
-        twitter: "@apedrops",
-        twitterLink: "",
-        walletAddress: "",
-        avatar: "/img/author/apeDrops.png",
-        numberFollowers: 426,
-        audios: [
-            {
-                src: "/audio/apeDrops/FoolinYaself.mp3",
-                id: 301,
-                name: "Foolin Yaself",
-                price: "",
-                background: "/img/collections/apeDrops/FoolinYaself.png",
-                createdAt: "",
-                likes: 12,
-                bid: "",
-                deadline:"December, 30, 2021",
-            },
-        ]
-    },
-    {
-        id: 4,
-        name: "Ape Drops",
-        twitter: "@apedrops",
-        twitterLink: "",
-        walletAddress: "",
-        avatar: "/img/author/apeDrops.png",
-        numberFollowers: 426,
-        audios: [
-            {
-                src: "/audio/apeDrops/FoolinYaself.mp3",
-                id: 301,
-                name: "Foolin Yaself",
-                price: "",
-                background: "/img/collections/apeDrops/FoolinYaself.png",
-                createdAt: "",
-                likes: 12,
-                bid: "",
-                deadline:"December, 30, 2021",
-            },
-        ]
-    }
-  ];
-
   const playAudio = (audioId) => {
     const audio = document.getElementById(`audio-${audioId}`);
 
@@ -248,14 +92,31 @@ const Colection = function() {
     }
   }
 
+  const playMedia = (data) => {
+    const media = document.getElementById(`new-items-${data?.id}`);;
+    if (data?.videoSrc) {
+      if (data?.id === audioPlayingId) {
+        media.pause();
+        setAudioPlayingId(null);
+      } else {
+        const currentVideo = document.getElementById(`new-items-${data?.id}`);
+        currentVideo.pause();
+        media.play();
+        setAudioPlayingId(data?.id);
+      }
+    } else {
+      playAudio(data?.id)
+    }
+  }
+
 const nftCardItem = (nft, index) => (
     <div key={index} className="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
         <div className="nft__item">
-            { nft.deadline &&
+            {/* { nft.deadline &&
                 <div className="de_countdown">
                     <Clock deadline={nft.deadline} />
                 </div>
-            }
+            } */}
             <div className="author_list_pp">
                 <span onClick={()=> window.open(nft.authorLink, "_self")}>                                    
                     <img className="lazy" src={author.avatar} alt=""/>
@@ -265,16 +126,32 @@ const nftCardItem = (nft, index) => (
             <div className="nft__item_wrap" style={{height: `${200}px`}}>
                 <Outer>
                     <div className="g-relative">
-                        <img src={nft.background} className="lazy nft__item_preview" alt=""/>
-                        <span className="icon-play" onClick={() => playAudio(nft?.id)}>
+                        {nft?.videoSrc ? null : <img src={nft?.background} className="lazy nft__item_preview" alt="" />}
+                        <span
+                            className="icon-play"
+                            style={{ zIndex: 9  }}
+                            onClick={() => playMedia(nft)}
+                        >
                             <span aria-hidden="true" className={nft?.id === audioPlayingId ? 'icon_pause' : 'arrow_triangle-right'}></span>
                         </span>
-                        <AudioStyled id={`audio-${nft?.id}`} controls >
-                            <source
-                                src={nft?.src || ""}
-                                type="audio/mpeg"
-                            />
-                        </AudioStyled>
+                        {
+                        nft?.videoSrc
+                            ? (<video id={`new-items-${nft?.id}`}  controlslist="nodownload" style={{ height: '260px' }}>
+                                <source
+                                    src={nft?.videoSrc || ""}
+                                    type="video/mp4"
+                                />
+                            </video>)
+                            : (
+                            <AudioStyled id={`new-items-${nft?.id}`} controls >
+                                <source
+                                    src={nft?.src || ""}
+                                    type="audio/mpeg"
+                                />
+                            </AudioStyled>
+                            )
+                        }
+                        
                     </div>
                 </Outer>
             </div>
@@ -302,7 +179,9 @@ return (
 
   <section className='container no-bottom'>
     <div className='row'>
-      <div className='spacer-double'></div>
+      <div className='spacer-double'>
+
+      </div>
       <div className="col-md-12">
          <div className="d_profile de-flex">
               <div className="de-flex-col">
@@ -347,7 +226,7 @@ return (
         </div>
         <div className='row'>
             {
-                author?.audios?.map((item, index) => nftCardItem(item, index))
+                author?.collection?.map((item, index) => nftCardItem(item, index))
             }
         </div>
     </section>

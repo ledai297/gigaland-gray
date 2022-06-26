@@ -6,6 +6,7 @@ import CarouselCollection from '../components/CarouselCollection';
 import CarouselNew from '../components/CarouselNew';
 import AuthorList from '../components/authorList';
 import Footer from '../components/footer';
+import News from "./news";
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
@@ -204,6 +205,16 @@ const homeone = ({ location }) => {
                         <h2>Create and Sell Now</h2>
                         </div>
                         <FeatureBox/>
+                    </div>
+                </section>
+
+                <section className='container no-top'>
+                    <div className='row'>
+                        <div className="spacer-double"></div>
+                        <div className='col-lg-12 mb-3'>
+                        <h2>News</h2>
+                        </div>
+                        <News />
                     </div>
                 </section>
 
